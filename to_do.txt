@@ -1,0 +1,9 @@
+Built in functions:
+
+
+FLOAT (convert str to float)
+SEARCH (returns index of first instance of list)
+
+Other:
+
+Comparisons (str to str, list to list)
