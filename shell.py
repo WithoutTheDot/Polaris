@@ -3,7 +3,7 @@ import basic
 
 while True:
 	text = input('basic > ')
-	if text == "Quit": break
+	if text == "QUIT": break
 	if text.strip() == "": continue
 	result, error = basic.run('<stdin>', text)
 

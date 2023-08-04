@@ -1,0 +1,8 @@
+PRINT("Enter your age: ")
+VAR age = INPUT_INT()
+
+IF age >= 18 THEN
+    PRINT("YOU can vote")
+ELSE
+    PRINT("Your cannot vote")
+END

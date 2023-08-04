@@ -7,6 +7,7 @@ from strings_with_arrows import *
 import string
 import os
 import math
+import random
 
 #######################################
 # CONSTANTS
@@ -1514,6 +1515,18 @@ class String(Value):
 
   def is_true(self):
     return len(self.value) > 0
+  
+  def get_comparison_eq(self, other):
+    if isinstance(other, String):
+      return Number(int(self.value == other.value)).set_context(self.context), None
+    else:
+      return None, Value.illegal_operation(self, other)
+
+  def get_comparison_ne(self, other):
+    if isinstance(other, String):
+      return Number(int(self.value != other.value)).set_context(self.context), None
+    else:
+      return None, Value.illegal_operation(self, other)
 
   def copy(self):
     copy = String(self.value)
@@ -1570,6 +1583,18 @@ class List(Value):
           'Element at this index could not be retrieved from list because index is out of bounds',
           self.context
         )
+    else:
+      return None, Value.illegal_operation(self, other)
+    
+  def get_comparison_eq(self, other):
+    if isinstance(other, List):
+      return Number(int(self.elements == other.elements)).set_context(self.context), None
+    else:
+      return None, Value.illegal_operation(self, other)
+
+  def get_comparison_ne(self, other):
+    if isinstance(other, List):
+      return Number(int(self.elements != other.elements)).set_context(self.context), None
     else:
       return None, Value.illegal_operation(self, other)
   
@@ -1714,6 +1739,17 @@ class BuiltInFunction(BaseFunction):
         print(f"'{text}' must be an integer. Try again!")
     return RTResult().success(Number(number))
   execute_input_int.arg_names = []
+
+  def execute_input_float(self, exec_ctx):
+    while True:
+      text = input()
+      try:
+        number = float(text)
+        break
+      except ValueError:
+        print(f"'{text}' must be a float. Try again!")
+    return RTResult().success(Number(float(number)))
+  execute_input_float.arg_names = []
 
   def execute_clear(self, exec_ctx):
     os.system('cls' if os.name == 'nt' else 'cls') 
@@ -1897,10 +1933,55 @@ class BuiltInFunction(BaseFunction):
       ))
   execute_float.arg_names = ["to_convert"]
 
+  def execute_edit(self, exec_ctx):
+    arr = exec_ctx.symbol_table.get("arr")
+    idx = exec_ctx.symbol_table.get("idx")
+    value = exec_ctx.symbol_table.get("value")
+
+    if not isinstance(arr, List):
+      return RTResult().failure(RTError(
+          self.pos_start, self.pos_end,
+          "First argument must be a list",
+          exec_ctx
+        ))
+    if not isinstance(idx, Number) or idx.value % 1 !=0 :
+      return RTResult().failure(RTError(
+          self.pos_start, self.pos_end,
+          "Secdon argument must be a int",
+          exec_ctx
+        ))
+    try:
+      arr.elements[idx.value] = value.value
+    except Exception as e:
+      return RTResult().failure(RTError(
+        self.pos_start, self.pos_end,
+        "Failed, index may be out of range",
+        exec_ctx
+      ))
+    
+    return RTResult().success(Number.null)
+
+  execute_edit.arg_names = ["arr", "idx", "value"]
+
+  def execute_randint(self, exec_ctx):
+    lower = exec_ctx.symbol_table.get("lower")
+    upper = exec_ctx.symbol_table.get("upper")
+
+    if not isinstance(lower, Number) or not isinstance(upper, Number) or lower.value % 1 != 0 or upper.value % 1 != 0 or lower.value>upper.value:
+      return RTResult().failure(RTError(
+        self.pos_start, self.pos_end,
+        "Both arguments must be integers and have a valid range",
+        exec_ctx
+      ))
+    
+    return RTResult().success(Number(random.randint(lower.value, upper.value)))
+  execute_randint.arg_names = ["lower", "upper"]
+
 BuiltInFunction.print       = BuiltInFunction("print")
 BuiltInFunction.print_ret   = BuiltInFunction("print_ret")
 BuiltInFunction.input       = BuiltInFunction("input")
 BuiltInFunction.input_int   = BuiltInFunction("input_int")
+BuiltInFunction.input_float = BuiltInFunction("input_float")
 BuiltInFunction.clear       = BuiltInFunction("clear")
 BuiltInFunction.is_number   = BuiltInFunction("is_number")
 BuiltInFunction.is_string   = BuiltInFunction("is_string")
@@ -1914,6 +1995,9 @@ BuiltInFunction.run					= BuiltInFunction("run")
 BuiltInFunction.str				= BuiltInFunction("str")
 BuiltInFunction.int				= BuiltInFunction("int")
 BuiltInFunction.float			= BuiltInFunction("float")
+BuiltInFunction.edit			= BuiltInFunction("edit")
+BuiltInFunction.randint			= BuiltInFunction("randint")
+
 
 #######################################
 # CONTEXT
@@ -2215,6 +2299,7 @@ global_symbol_table.set("PRINT", BuiltInFunction.print)
 global_symbol_table.set("PRINT_RET", BuiltInFunction.print_ret)
 global_symbol_table.set("INPUT", BuiltInFunction.input)
 global_symbol_table.set("INPUT_INT", BuiltInFunction.input_int)
+global_symbol_table.set("INPUT_FLOAT", BuiltInFunction.input_float)
 global_symbol_table.set("CLEAR", BuiltInFunction.clear)
 global_symbol_table.set("CLS", BuiltInFunction.clear)
 global_symbol_table.set("IS_NUM", BuiltInFunction.is_number)
@@ -2228,6 +2313,10 @@ global_symbol_table.set("LEN", BuiltInFunction.len)
 global_symbol_table.set("RUN", BuiltInFunction.run)
 global_symbol_table.set("STR", BuiltInFunction.str)
 global_symbol_table.set("INT", BuiltInFunction.int)
+global_symbol_table.set("FLOAT", BuiltInFunction.float)
+global_symbol_table.set("EDIT", BuiltInFunction.edit)
+global_symbol_table.set("RANDINT", BuiltInFunction.randint)
+
 
 def run(fn, text):
   # Generate tokens
