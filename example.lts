@@ -1,8 +1,18 @@
-PRINT("Enter your age: ")
-VAR age = INPUT_INT()
-
-IF age >= 18 THEN
-    PRINT("YOU can vote")
-ELSE
-    PRINT("Your cannot vote")
+FUN bubbleSort(arr)
+    VAR n = LEN(arr)
+    VAR swapped = FALSE
+    FOR i = 0 TO n-1 THEN
+        FOR j = 1 TO n-i-1 THEN
+            IF arr/j > arr/(j+1) THEN
+                VAR swapped = TRUE
+                VAR temp = arr/j
+                EDIT(arr, j, (arr/(j+1)))
+                EDIT(arr, (j+1), temp)
+            END
+        END
+        IF NOT swapped THEN
+            RETURN NULL
+        END
+    END
+    RETURN arr
 END
