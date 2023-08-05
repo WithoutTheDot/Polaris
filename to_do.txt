@@ -1,7 +1,0 @@
-Built in functions:
-
-SEARCH (returns index of first instance of list)
-
-Other:
-
-Comparisons (str to str, list to list)
