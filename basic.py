@@ -1,3 +1,5 @@
+global debug
+debug = False
 #######################################
 # IMPORTS
 #######################################
@@ -568,12 +570,13 @@ class Parser:
 
   def parse(self):
     res = self.statements()
-    if not res.error and self.current_tok.type != TT_EOF:
-      return res.failure(InvalidSyntaxError(
-        self.current_tok.pos_start, self.current_tok.pos_end,
-        "Token cannot appear after previous tokens"
-      ))
-    return res
+    if not debug:
+      if not res.error and self.current_tok.type != TT_EOF:
+        return res.failure(InvalidSyntaxError(
+          self.current_tok.pos_start, self.current_tok.pos_end,
+          "Token cannot appear after previous tokens (Expected 'END' or there if an unknown error)"
+        ))
+      return res
 
   ###################################
 
@@ -1978,6 +1981,36 @@ class BuiltInFunction(BaseFunction):
     return RTResult().success(Number(random.randint(lower.value, upper.value)))
   execute_randint.arg_names = ["lower", "upper"]
 
+  def execute_debug(self, exec_ctx):
+    global debug
+    debug = not debug
+    return RTResult().success(Number.null)
+  execute_debug.arg_names = []
+
+  def execute_split(self, exec_ctx):
+    string = exec_ctx.symbol_table.get("string")
+    delimiter = exec_ctx.symbol_table.get("delimiter")
+
+    if not isinstance(string ,String):
+      return RTResult().failure(RTError(
+          self.pos_start, self.pos_end,
+          "First argument must be a string",
+          exec_ctx
+        ))
+    if not isinstance(delimiter ,String):
+      return RTResult().failure(RTError(
+          self.pos_start, self.pos_end,
+          "Second argument must be a string",
+          exec_ctx
+        ))
+    
+    return RTResult().success(List(string.value.split(delimiter.value)))
+
+
+  execute_split.arg_names = ["string", "delimiter"]
+
+
+
 BuiltInFunction.print       = BuiltInFunction("print")
 BuiltInFunction.print_ret   = BuiltInFunction("print_ret")
 BuiltInFunction.input       = BuiltInFunction("input")
@@ -1998,6 +2031,8 @@ BuiltInFunction.int				= BuiltInFunction("int")
 BuiltInFunction.float			= BuiltInFunction("float")
 BuiltInFunction.edit			= BuiltInFunction("edit")
 BuiltInFunction.randint			= BuiltInFunction("randint")
+BuiltInFunction.debug			= BuiltInFunction("debug")
+BuiltInFunction.split			= BuiltInFunction("split")
 
 
 #######################################
@@ -2317,6 +2352,8 @@ global_symbol_table.set("INT", BuiltInFunction.int)
 global_symbol_table.set("FLOAT", BuiltInFunction.float)
 global_symbol_table.set("EDIT", BuiltInFunction.edit)
 global_symbol_table.set("RANDINT", BuiltInFunction.randint)
+global_symbol_table.set("DEBUG", BuiltInFunction.debug)
+global_symbol_table.set("SPLIT", BuiltInFunction.split)
 
 
 def run(fn, text):
