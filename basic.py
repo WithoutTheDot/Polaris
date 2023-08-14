@@ -1,4 +1,6 @@
 global debug
+global filename
+filename = "<stdin>"
 debug = False
 #######################################
 # IMPORTS
@@ -6,10 +8,14 @@ debug = False
 
 from strings_with_arrows import *
 
+from time import time
 import string
 import os
 import math
 import random
+import sys
+
+sys.setrecursionlimit(10000)
 
 #######################################
 # CONSTANTS
@@ -138,6 +144,7 @@ KEYWORDS = [
   'TO',
   'STEP',
   'WHILE',
+  'DO',
   'FUN',
   'THEN',
   'END',
@@ -1046,10 +1053,10 @@ class Parser:
     else:
       step_value = None
 
-    if not self.current_tok.matches(TT_KEYWORD, 'THEN'):
+    if not self.current_tok.matches(TT_KEYWORD, 'DO'):
       return res.failure(InvalidSyntaxError(
         self.current_tok.pos_start, self.current_tok.pos_end,
-        f"Expected 'THEN'"
+        f"Expected 'DO'"
       ))
 
     res.register_advancement()
@@ -1093,10 +1100,10 @@ class Parser:
     condition = res.register(self.expr())
     if res.error: return res
 
-    if not self.current_tok.matches(TT_KEYWORD, 'THEN'):
+    if not self.current_tok.matches(TT_KEYWORD, 'DO'):
       return res.failure(InvalidSyntaxError(
         self.current_tok.pos_start, self.current_tok.pos_end,
-        f"Expected 'THEN'"
+        f"Expected 'DO'"
       ))
 
     res.register_advancement()
@@ -1514,6 +1521,15 @@ class String(Value):
   def multed_by(self, other):
     if isinstance(other, Number):
       return String(self.value * other.value).set_context(self.context), None
+    else:
+      return None, Value.illegal_operation(self, other)
+    
+  def dived_by(self, other):
+    if isinstance(other, Number):
+      try:
+        return String(self.value[other]).set_context(self.context), None
+      except Exception as e:
+        return None, Value.illegal_operation(self, other)
     else:
       return None, Value.illegal_operation(self, other)
 
@@ -1987,27 +2003,11 @@ class BuiltInFunction(BaseFunction):
     return RTResult().success(Number.null)
   execute_debug.arg_names = []
 
-  def execute_split(self, exec_ctx):
-    string = exec_ctx.symbol_table.get("string")
-    delimiter = exec_ctx.symbol_table.get("delimiter")
-
-    if not isinstance(string ,String):
-      return RTResult().failure(RTError(
-          self.pos_start, self.pos_end,
-          "First argument must be a string",
-          exec_ctx
-        ))
-    if not isinstance(delimiter ,String):
-      return RTResult().failure(RTError(
-          self.pos_start, self.pos_end,
-          "Second argument must be a string",
-          exec_ctx
-        ))
-    
-    return RTResult().success(List(string.value.split(delimiter.value)))
+  def execute_time(self, exec_ctx):
+    return RTResult().success(Number(time()))
+  execute_time.arg_names =[]
 
 
-  execute_split.arg_names = ["string", "delimiter"]
 
 
 
@@ -2032,7 +2032,8 @@ BuiltInFunction.float			= BuiltInFunction("float")
 BuiltInFunction.edit			= BuiltInFunction("edit")
 BuiltInFunction.randint			= BuiltInFunction("randint")
 BuiltInFunction.debug			= BuiltInFunction("debug")
-BuiltInFunction.split			= BuiltInFunction("split")
+BuiltInFunction.time			= BuiltInFunction("time")
+
 
 
 #######################################
@@ -2353,7 +2354,7 @@ global_symbol_table.set("FLOAT", BuiltInFunction.float)
 global_symbol_table.set("EDIT", BuiltInFunction.edit)
 global_symbol_table.set("RANDINT", BuiltInFunction.randint)
 global_symbol_table.set("DEBUG", BuiltInFunction.debug)
-global_symbol_table.set("SPLIT", BuiltInFunction.split)
+global_symbol_table.set("TIME", BuiltInFunction.time)
 
 
 def run(fn, text):
