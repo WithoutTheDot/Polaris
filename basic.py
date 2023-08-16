@@ -15,7 +15,7 @@ import math
 import random
 import sys
 
-sys.setrecursionlimit(10000)
+sys.setrecursionlimit(1000000)
 
 #######################################
 # CONSTANTS
@@ -145,7 +145,7 @@ KEYWORDS = [
   'STEP',
   'WHILE',
   'DO',
-  'FUN',
+  'FUNC',
   'THEN',
   'END',
   'RETURN',
@@ -581,7 +581,7 @@ class Parser:
       if not res.error and self.current_tok.type != TT_EOF:
         return res.failure(InvalidSyntaxError(
           self.current_tok.pos_start, self.current_tok.pos_end,
-          "Token cannot appear after previous tokens (Expected 'END' or there if an unknown error)"
+          "Token cannot appear after previous tokens (Expected 'END' and/or uncompleted block)"
         ))
       return res
 
@@ -652,7 +652,7 @@ class Parser:
     if res.error:
       return res.failure(InvalidSyntaxError(
         self.current_tok.pos_start, self.current_tok.pos_end,
-        "Expected 'RETURN', 'CONTINUE', 'BREAK', 'VAR', 'IF', 'FOR', 'WHILE', 'FUN', int, float, identifier, '+', '-', '(', '[' or 'NOT'"
+        "Expected 'RETURN', 'CONTINUE', 'BREAK', 'VAR', 'IF', 'FOR', 'WHILE', 'FUNC', int, float, identifier, '+', '-', '(', '[' or 'NOT'"
       ))
     return res.success(expr)
 
@@ -690,7 +690,7 @@ class Parser:
     if res.error:
       return res.failure(InvalidSyntaxError(
         self.current_tok.pos_start, self.current_tok.pos_end,
-        "Expected 'VAR', 'IF', 'FOR', 'WHILE', 'FUN', int, float, identifier, '+', '-', '(', '[' or 'NOT'"
+        "Expected 'VAR', 'IF', 'FOR', 'WHILE', 'FUNC', int, float, identifier, '+', '-', '(', '[' or 'NOT'"
       ))
 
     return res.success(node)
@@ -712,7 +712,7 @@ class Parser:
     if res.error:
       return res.failure(InvalidSyntaxError(
         self.current_tok.pos_start, self.current_tok.pos_end,
-        "Expected int, float, identifier, '+', '-', '(', '[', 'IF', 'FOR', 'WHILE', 'FUN' or 'NOT'"
+        "Expected int, float, identifier, '+', '-', '(', '[', 'IF', 'FOR', 'WHILE', 'FUNC' or 'NOT'"
       ))
 
     return res.success(node)
@@ -757,7 +757,7 @@ class Parser:
         if res.error:
           return res.failure(InvalidSyntaxError(
             self.current_tok.pos_start, self.current_tok.pos_end,
-            "Expected ')', 'VAR', 'IF', 'FOR', 'WHILE', 'FUN', int, float, identifier, '+', '-', '(', '[' or 'NOT'"
+            "Expected ')', 'VAR', 'IF', 'FOR', 'WHILE', 'FUNC', int, float, identifier, '+', '-', '(', '[' or 'NOT'"
           ))
 
         while self.current_tok.type == TT_COMMA:
@@ -832,14 +832,14 @@ class Parser:
       if res.error: return res
       return res.success(while_expr)
 
-    elif tok.matches(TT_KEYWORD, 'FUN'):
+    elif tok.matches(TT_KEYWORD, 'FUNC'):
       func_def = res.register(self.func_def())
       if res.error: return res
       return res.success(func_def)
 
     return res.failure(InvalidSyntaxError(
       tok.pos_start, tok.pos_end,
-      "Expected int, float, identifier, '+', '-', '(', '[', IF', 'FOR', 'WHILE', 'FUN'"
+      "Expected int, float, identifier, '+', '-', '(', '[', IF', 'FOR', 'WHILE', 'FUNC'"
     ))
 
   def list_expr(self):
@@ -864,7 +864,7 @@ class Parser:
       if res.error:
         return res.failure(InvalidSyntaxError(
           self.current_tok.pos_start, self.current_tok.pos_end,
-          "Expected ']', 'VAR', 'IF', 'FOR', 'WHILE', 'FUN', int, float, identifier, '+', '-', '(', '[' or 'NOT'"
+          "Expected ']', 'VAR', 'IF', 'FOR', 'WHILE', 'FUNC', int, float, identifier, '+', '-', '(', '[' or 'NOT'"
         ))
 
       while self.current_tok.type == TT_COMMA:
@@ -1010,6 +1010,15 @@ class Parser:
     res.register_advancement()
     self.advance()
 
+    if not self.current_tok.matches(TT_KEYWORD, 'VAR'):
+      return res.failure(InvalidSyntaxError(
+        self.current_tok.pos_start, self.current_tok.pos_end,
+        f"Expected 'VAR'"
+      ))
+    
+    res.register_advancement()
+    self.advance()
+
     if self.current_tok.type != TT_IDENTIFIER:
       return res.failure(InvalidSyntaxError(
         self.current_tok.pos_start, self.current_tok.pos_end,
@@ -1135,10 +1144,10 @@ class Parser:
   def func_def(self):
     res = ParseResult()
 
-    if not self.current_tok.matches(TT_KEYWORD, 'FUN'):
+    if not self.current_tok.matches(TT_KEYWORD, 'FUNC'):
       return res.failure(InvalidSyntaxError(
         self.current_tok.pos_start, self.current_tok.pos_end,
-        f"Expected 'FUN'"
+        f"Expected 'FUNC'"
       ))
 
     res.register_advancement()
@@ -1527,7 +1536,7 @@ class String(Value):
   def dived_by(self, other):
     if isinstance(other, Number):
       try:
-        return String(self.value[other]).set_context(self.context), None
+        return String(self.value[other.value]).set_context(self.context), None
       except Exception as e:
         return None, Value.illegal_operation(self, other)
     else:
