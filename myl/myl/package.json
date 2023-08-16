@@ -1,0 +1,25 @@
+{
+  "name": "myl",
+  "displayName": "My Language Support",
+  "description": "Support for my language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "myl",
+      "aliases": ["myl", "myl"],
+      "extensions": [".myl"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "myl",
+      "scopeName": "source.myl",
+      "path": "./syntaxes/myl.tmLanguage.json"
+    }]
+  }
+}

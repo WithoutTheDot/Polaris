@@ -1,0 +1,78 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "myl",
+    "patterns": [
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#constants"
+        },
+        {
+            "include": "#functions"
+        },
+        {
+            "include": "#user_functions"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#comments"
+        }
+    ],
+    "repository": {
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.myl",
+                    "match": "\\b(VAR|AND|OR|NOT|IF|ELIF|ELSE|FOR|TO|STEP|WHILE|DO|FUNC|THEN|END|RETURN|CONTINUE|BREAK)\\b"
+                }
+            ]
+        },
+        "constants": {
+            "patterns": [
+                {
+                    "name": "constant.language.myl",
+                    "match": "\\b(NULL|FALSE|TRUE|MATH_PI)\\b"
+                }
+            ]
+        },
+        "functions": {
+            "patterns": [
+                {
+                    "name": "support.function.builtin.myl",
+                    "match": "\\b(PRINT|PRINT_RET|INPUT|INPUT_INT|INPUT_FLOAT|CLEAR|CLS|IS_NUM|IS_STR|IS_LIST|IS_FUN|APPEND|POP|EXTEND|LEN|RUN|STR|INT|FLOAT|EDIT|RANDINT|DEBUG|TIME)\\b"
+                }
+            ]
+        },
+        "user_functions": {
+            "patterns": [
+                {
+                    "name": "entity.name.function.user.myl",
+                    "match": "\\bFUNC\\s+\\w+\\s*\\("
+                }
+            ]
+        },
+        "strings": {
+            "name": "string.quoted.double.myl",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.myl",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.double-slash.myl",
+                    "match": "//.*$"
+                }
+            ]
+        }
+    },
+    "scopeName": "source.myl"
+}

@@ -1,0 +1,123 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "myl",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#functions_and_calls"
+        },
+        {
+            "include": "#constants"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#brackets"
+        },
+        {
+            "include": "#variables"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.number-sign.myl",
+                    "match": "#.*$"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.myl",
+                    "match": "\\b(VAR|AND|OR|NOT|IF|ELIF|ELSE|FOR|TO|STEP|WHILE|DO|FUNC|THEN|END|RETURN|CONTINUE|BREAK)\\b"
+                }
+            ]
+        },
+        "functions_and_calls": {
+            "patterns": [
+                {
+                    "name": "support.function.myl",
+                    "begin": "\\b\\w+\\s*\\(",
+                    "end": "\\)",
+                    "patterns": [
+                        {
+                            "include": "#functions_and_calls"
+                        },
+                        {
+                            "include": "#variables"
+                        },
+                        {
+                            "include": "#constants"
+                        },
+                        {
+                            "include": "#strings"
+                        }
+                    ]
+                }
+            ]
+        },
+        "constants": {
+            "patterns": [
+                {
+                    "name": "constant.language.boolean.myl",
+                    "match": "\\b(TRUE|FALSE)\\b"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.myl",
+                    "match": "\\b\\d+\\b"
+                }
+            ]
+        },
+        "strings": {
+            "name": "string.quoted.double.myl",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.myl",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "variables": {
+            "patterns": [
+                {
+                    "name": "variable.name.myl",
+                    "match": "\\b\\w+\\b"
+                }
+            ]
+        },
+        "brackets": {
+            "patterns": [
+                {
+                    "name": "meta.bracket.square.myl",
+                    "match": "[\\[\\]]"
+                },
+                {
+                    "name": "meta.bracket.curly.myl",
+                    "match": "[{}]"
+                },
+                {
+                    "name": "meta.bracket.round.myl",
+                    "match": "[()]"
+                }
+            ]
+        }
+    },
+    "scopeName": "source.myl"
+}
