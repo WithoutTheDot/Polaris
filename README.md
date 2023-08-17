@@ -17,11 +17,14 @@ Hello and welcome to my programming language. This project represents a simple e
 
 ## Features
 
-List the key features of your project.
+Key features of my language
 
-- Feature 1
-- Feature 2
-- ...
+- Basic Arithmetic including logical operations
+- A variety of datastructures
+- Variables
+- Conditional Statements
+- Iteration (Conditional and definite)
+- Functions
 
 ## Getting Started
 
