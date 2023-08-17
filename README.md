@@ -30,10 +30,6 @@ Key features of my language
 
 Provide instructions on how to get your project up and running locally. Include any prerequisites, installation steps, and configuration details.
 
-### Prerequisites
-
-List any software, libraries, or tools that need to be installed before using your project.
-
 ### Installation
 
 Step-by-step guide on how to install your project.
