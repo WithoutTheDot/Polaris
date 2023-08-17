@@ -20,7 +20,7 @@ Hello and welcome to my programming language. This project represents a simple e
 Key features of my language
 
 - Basic Arithmetic including logical operations
-- A variety of datastructures
+- A variety of data structures
 - Variables
 - Conditional Statements
 - Iteration (Conditional and definite)
