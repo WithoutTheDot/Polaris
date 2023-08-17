@@ -1,6 +1,6 @@
 # My Programming Language
 
-Hello and welcome to my programming language. This project represents a simple exploration of how programming languages are constructed. While not highly advanced, this language covers the fundamentals and includes a basic (albeit imperfect) error-handling system. To install, please refer to the [Installation Instructions](#installation) section below. I hope you enjoy my language.
+
 
 ## Table of Contents
 
@@ -13,7 +13,7 @@ Hello and welcome to my programming language. This project represents a simple e
 
 ## Introduction
 
-Provide a brief overview of your project. What does it do? What problem does it solve?
+Hello and welcome to my programming language. This project represents a simple exploration of how programming languages are constructed. While not highly advanced, this language covers the fundamentals and includes a basic (albeit imperfect) error-handling system. To install, please refer to the [Installation Instructions](#installation) section below. I hope you enjoy my language.
 
 ## Features
 
