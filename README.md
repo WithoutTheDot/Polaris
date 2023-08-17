@@ -35,6 +35,7 @@ Clone the git
 #### Step 2 
 Move the [myl](https://github.com/WithoutTheDot/MyLanguage/tree/main/myl) folder to the following directory (ensure that it is on the correct user's folder) `~/.vscode/extensions`. Once you have reloaded Visual Studio Code, syntax highlighting will be enabled for `.myl` files
 #### Step 3
+To enable access to run `.myl` files anywhere on your computer on windows execute the following commands (__ensuring that you have edited the path__)
 
 ## Usage
 
