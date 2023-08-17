@@ -36,7 +36,15 @@ Step-by-step guide on how to install your project.
 
 ## Usage
 
-Explain how users can use your project. Provide code examples or usage scenarios.
+After completing the instructions from the installation section you can use the language in 2 ways:
+
+- Via the Shell
+- Reading from Files
+
+#### Via the Shell
+The shell provides a simple way to execute code directly and is useful for debugging. It is important to note that multiline statements can be inputed into the shell by using ; to seperate lines. 
+
+To start the shell either run [shell.py](https://github.com/WithoutTheDot/MyLanguage/tree/main/MyLanguage) from the [Installation Instructions](https://github.com/WithoutTheDot/MyLanguage/tree/main/MyLanguage)
 
 ## Contributing
 
