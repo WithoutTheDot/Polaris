@@ -13,7 +13,7 @@
 
 ## Introduction
 
-Hello and welcome to my programming language. This project represents a simple exploration of how programming languages are constructed. While not highly advanced, this language covers the fundamentals and includes a basic (albeit imperfect) error-handling system. To install, please refer to the [Installation Instructions](#installation) section below. I hope you enjoy my language.
+Hello and welcome to my programming language. This project represents a simple exploration of how programming languages are made. While not highly advanced, this language covers the fundamentals and includes a basic (albeit imperfect) error-handling system. To install, please refer to the [Installation Instructions](#installation) section below. I hope you enjoy my language.
 
 ## Features
 
@@ -28,11 +28,13 @@ Key features of my language
 
 ## Getting Started
 
-Provide instructions on how to get your project up and running locally. Include any prerequisites, installation steps, and configuration details.
-
 ### Installation
 
-Step-by-step guide on how to install your project.
+#### Step 1
+Clone the git
+#### Step 2 
+Move the [myl](https://github.com/WithoutTheDot/MyLanguage/tree/main/myl) folder to the following directory (ensure that it is on the correct user's folder) `~/.vscode/extensions`. Once you have reloaded Visual Studio Code, syntax highlighting will be enabled for `.myl` files
+#### Step 3
 
 ## Usage
 
@@ -59,10 +61,5 @@ This would execute the my_file.myl program
 
 ## Contributing
 
-Explain how others can contribute to your project if you're open to contributions. Include guidelines for submitting pull requests, reporting issues, and coding standards.
+Contributing is recommended, if you have an idea please feel free to fork this repository and I test out your improvements and add them.
 
-## License
-
-State the license under which your project is released. For example, you can use the MIT License:
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
