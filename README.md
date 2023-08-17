@@ -32,10 +32,19 @@ Key features of my language
 
 #### Step 1
 Clone the git
+
 #### Step 2 
 Move the [myl](https://github.com/WithoutTheDot/MyLanguage/tree/main/myl) folder to the following directory (ensure that it is on the correct user's folder) `~/.vscode/extensions`. Once you have reloaded Visual Studio Code, syntax highlighting will be enabled for `.myl` files
+
 #### Step 3
-To enable access to run `.myl` files anywhere on your computer on windows execute the following commands (__ensuring that you have edited the path__)
+To enable access to run `.myl` files anywhere on your computer on windows in powershell (run as administrator) execute the following commands (__ensuring that you have edited the path__)
+
+```
+$shellDirectory = "C:\Users\PATH\TO\MyLanguage\dist"
+[Environment]::SetEnvironmentVariable("Path", "$env:Path;$shellDirectory", [EnvironmentVariableTarget]::Machine)
+```
+This will allow you to directly run programms which are not in the path of `shell.py`.
+You should now be able to move onto the next steps
 
 ## Usage
 
