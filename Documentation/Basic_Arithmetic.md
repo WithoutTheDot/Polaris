@@ -27,7 +27,7 @@ basic > 5/4
 ```Mylanguage
 basic > 16^(1/2)
 ```
-### Brackets
+## Brackets
 It is important to note that brackets can change the order of operation in arithmetic. See example below:
 ```Mylanguage
 basic > 16^1/2
