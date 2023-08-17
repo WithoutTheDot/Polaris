@@ -70,5 +70,5 @@ This would execute the my_file.myl program
 
 ## Contributing
 
-Contributing is recommended, if you have an idea please feel free to fork this repository and I test out your improvements and add them.
+Contributing is encouraged, if you have an idea please feel free to fork this repository and I test out your improvements and add them.
 
