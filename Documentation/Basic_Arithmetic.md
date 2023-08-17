@@ -52,4 +52,37 @@ basic > 1 OR 0
 basic > NOT 0
 1
 ```
+
+## Comparison Operators
+All comparison operators work between integers and floats but `==` and `!=` work between strings and strings and lists and lists
+#### Is equal to
 ```
+basic > 1==200
+0
+```
+#### Is not equal to
+```
+basic > 1!=200
+1
+```
+#### Greater than
+```
+basic > 1>200
+0
+```
+#### Greater than or equal to
+```
+basic > 1000>=200
+1
+```
+#### Less than
+```
+basic > 1<200
+1
+```
+#### Less than or equal to 
+```
+basic > 1>=200
+0
+```
+
