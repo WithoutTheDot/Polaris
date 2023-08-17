@@ -1,0 +1,73 @@
+#Magic square
+
+VAR sqr = [[16,3,2,13],[5,10,11,8],[9,6,7,12],[4,15,14,1]]
+FUNC h_line(line, arr)
+    VAR sum = 0
+    FOR VAR i = 0 TO LEN(arr/line) DO
+        VAR sum = sum+(arr/line/i)
+    END
+    RETURN sum
+END
+
+FUNC v_line(line, arr)
+    VAR sum = 0
+    FOR VAR i = 0 TO LEN(arr/line) DO
+        VAR sum = sum+(arr/i/line)
+    END
+    RETURN sum
+END
+
+FUNC tl_diagnol(arr)
+    VAR sum = 0
+    FOR VAR i = 0 TO LEN(arr) DO
+        VAR sum = sum + arr/i/i
+    END
+    RETURN sum
+END
+
+FUNC tr_diagnol(arr)
+    VAR sum = 0
+    VAR id = 0
+    FOR VAR i = LEN(arr)-1 TO -1 STEP -1 DO
+        VAR sum = sum + arr/id/i
+        VAR id = id +1
+    END
+    RETURN sum
+END
+
+VAR sum = h_line(0, sqr)
+VAR tr = TRUE
+VAR res = FALSE
+
+FOR VAR i = 0 TO LEN(sqr) DO
+    VAR res = h_line(i, sqr) == sum
+    IF res == FALSE THEN 
+        VAR tr = FALSE 
+        BREAK
+    END
+    VAR res = v_line(i, sqr) == sum
+    IF res == FALSE THEN 
+        VAR tr = FALSE
+        BREAK 
+    END
+END
+VAR res = tl_diagnol(sqr) == sum
+IF res == FALSE THEN 
+    VAR tr = FALSE
+END
+VAR res = tr_diagnol(sqr) == sum
+IF res == FALSE THEN 
+    VAR tr = FALSE
+END
+
+
+IF tr == TRUE THEN 
+    PRINT("It is a magic square")
+ELSE
+    PRINT("It is not a magic square")
+END
+
+
+
+
+        

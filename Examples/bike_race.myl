@@ -1,0 +1,9 @@
+VAR in = [["Bernard", 345345, 3455542], ["Joel", 345345, 345789], ["Lucas", 345345, 3453453]]
+
+VAR str = ""
+
+FOR VAR i = 0 TO LEN(in) DO
+    VAR str = str + in/i/0 +" "+ STR(in/i/2 - in/i/1) + "\n"
+END 
+
+PRINT(str)

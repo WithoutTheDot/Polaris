@@ -1,4 +1,0 @@
-# Times tables
-PRINT("Enter a number")
-VAR number = INPUT()
-FOR i = 0 TO 
