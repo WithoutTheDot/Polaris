@@ -29,11 +29,27 @@ basic > 16^(1/2)
 ```
 ## Brackets
 It is important to note that brackets can change the order of operation in arithmetic. See example below:
-```Mylanguage
+```
 basic > 16^1/2
 8
 basic > 16^(1/2)
 4
 ```
-
+##Logical Operators
+The 3 main logical operators are implemented in this language but return integers (1 or 0) rather than booleans and only work with numbers.
+####AND
+```
+basic > 1 AND 0
+0
+```
+####OR
+```
+basic > 1 OR 0
+1
+```
+####NOT
+```
+basic > NOT 0
+1
+```
 ```
