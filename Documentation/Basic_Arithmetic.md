@@ -23,7 +23,7 @@ basic > 5 * 10
 basic > 5/4
 1.25
 ```
-## Raising to a power
+#### Raising to a power
 ```Mylanguage
 basic > 16^(1/2)
 ```
