@@ -45,6 +45,10 @@ After completing the instructions from the installation section you can use the 
 The shell provides a simple way to execute code directly and is useful for debugging. It is important to note that multiline statements can be inputed into the shell by using ; to seperate lines. 
 
 To start the shell either run [shell.py](https://github.com/WithoutTheDot/MyLanguage/tree/main/MyLanguage) from the [Mylanguage folder](https://github.com/WithoutTheDot/MyLanguage/tree/main/MyLanguage)
+or in powershell
+```
+shell.exe
+```
 
 ## Contributing
 
