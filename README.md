@@ -41,13 +41,21 @@ After completing the instructions from the installation section you can use the 
 - Via the Shell
 - Reading from Files
 
-#### Via the Shell
+### Via the Shell
 The shell provides a simple way to execute code directly and is useful for debugging. It is important to note that multiline statements can be inputed into the shell by using ; to seperate lines. 
 
 To start the shell either run [shell.py](https://github.com/WithoutTheDot/MyLanguage/tree/main/MyLanguage) from the [Mylanguage folder](https://github.com/WithoutTheDot/MyLanguage/tree/main/MyLanguage) or in powershell
 ```
 shell.exe
 ```
+
+### Reading from Files
+Files can be directly read from command line inputs, the output will be directly shown in the terminal window you executed the command. To run a file see below:
+```
+shell.exe my_file.myl
+```
+This would execute the my_file.myl program
+
 
 ## Contributing
 
