@@ -35,19 +35,19 @@ basic > 16^1/2
 basic > 16^(1/2)
 4
 ```
-##Logical Operators
+## Logical Operators
 The 3 main logical operators are implemented in this language but return integers (1 or 0) rather than booleans and only work with numbers.
-####AND
+#### AND
 ```
 basic > 1 AND 0
 0
 ```
-####OR
+#### OR
 ```
 basic > 1 OR 0
 1
 ```
-####NOT
+#### NOT
 ```
 basic > NOT 0
 1
