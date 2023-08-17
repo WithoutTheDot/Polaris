@@ -39,7 +39,7 @@ Move the [myl](https://github.com/WithoutTheDot/MyLanguage/tree/main/myl) folder
 #### Step 3
 To enable access to run `.myl` files anywhere on your computer on windows in powershell (run as administrator) execute the following commands (__ensuring that you have edited the path__)
 
-```
+```powershell
 $shellDirectory = "C:\Users\PATH\TO\MyLanguage\dist"
 [Environment]::SetEnvironmentVariable("Path", "$env:Path;$shellDirectory", [EnvironmentVariableTarget]::Machine)
 ```
