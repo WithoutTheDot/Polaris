@@ -1,0 +1,15 @@
+FUNC fibonacci(n)
+    IF n <= 1 THEN
+        RETURN n
+    ELSE
+        RETURN (fibonacci(n-1) + fibonacci(n - 2)) 
+    END
+END
+
+VAR s = TIME()
+FOR VAR i = 0 TO 30 DO
+    PRINT(STR(i)+" "+STR(fibonacci(i)))
+END
+VAR e = TIME()
+
+PRINT("Completed Fibonacci recursively in: "+STR(e-s)+" seconds")

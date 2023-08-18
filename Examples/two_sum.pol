@@ -1,0 +1,15 @@
+#Brute Force
+FUNC twoSum(nums, target)
+    VAR n = LEN(nums)
+    FOR VAR i = 0 TO n-1 DO
+        FOR VAR j = i+1 TO n DO
+            IF nums/i + nums/j == target THEN
+                RETURN [i,j]
+            END
+        END
+    END
+    RETURN []
+END
+
+PRINT(twoSum([2,7,11,15], 17))
+
