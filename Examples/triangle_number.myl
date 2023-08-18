@@ -1,0 +1,42 @@
+# Task: make a function that finds the nth triangular number  
+#O(1)
+FUNC nth_triangle(n) 
+    # Formula:
+    # n(n+1)/2
+    RETURN n*(n+1)/2
+END
+    
+# Alternate function very inefficient in comparison
+#O(n)
+FUNC nth_triangle_alt(n) 
+    # Only needs to work up to the 10^4 number so
+    VAR numlist = []
+    VAR number = 0
+    FOR VAR i = 1 TO 10^4 DO
+        VAR number = number+i
+        APPEND(numlist, number)
+    END
+    RETURN numlist/n
+END
+
+#0(1)
+VAR fast_start = TIME()
+#Now O(n) to get 100 numbers
+FOR VAR i = 1 TO 100 DO 
+    PRINT(nth_triangle(i))
+END
+VAR fast_end = TIME()
+
+#O(n)
+VAR slow_start = TIME()
+#Now O(n^2) to get 100 numbers
+FOR VAR i = 1 TO 100 DO 
+    PRINT(nth_triangle_alt(i))
+END
+VAR slow_end = TIME()
+
+PRINT("Fast: "+STR(fast_end-fast_start))
+PRINT("Slow: "+STR(slow_end-slow_start))
+
+
+
