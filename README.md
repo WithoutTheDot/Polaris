@@ -39,7 +39,7 @@ Move the [pol](https://github.com/WithoutTheDot/Polaris/tree/main/pol) folder to
 To enable access to run `.pol` files anywhere on your computer on windows in powershell (run as administrator) execute the following commands (__ensuring that you have edited the path__)
 
 ```powershell
-$shellDirectory = "C:\Users\PATH\TO\Polaris\dist"
+$shellDirectory = "C:\Users\PATH\TO\Polaris\Polaris\dist"
 [Environment]::SetEnvironmentVariable("Path", "$env:Path;$shellDirectory", [EnvironmentVariableTarget]::Machine)
 ```
 This will allow you to directly run programms which are not in the path of `shell.py`.
@@ -57,13 +57,13 @@ The shell provides a simple way to execute code directly and is useful for debug
 
 To start the shell either run [shell.py](https://github.com/WithoutTheDot/Polaris/tree/main/Polaris) from the [Polaris folder](https://github.com/WithoutTheDot/Polaris/tree/main/Polaris) or in powershell
 ```
-shell.exe
+polaris.exe
 ```
 
 ### Reading from Files
 Files can be directly read from command line inputs, the output will be directly shown in the terminal window you executed the command. To run a file see below:
 ```
-shell.exe my_file.pol
+polaris.exe my_file.pol
 ```
 This would execute the my_file.pol program
 
