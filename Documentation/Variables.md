@@ -42,4 +42,12 @@ VAR c = 100
 ```
 
 ## Strings
-In Polaris strings are identified with `""` and are assigned in the same way. To learn more about strings visit the [String documentation]( )
+In Polaris strings are identified with `""` and are assigned in the same way. To learn more about strings visit the [String documentation](https://github.com/WithoutTheDot/Polaris/edit/main/Documentation/Strings.md)
+```
+VAR str = "Hello, World!"
+```
+## Lists
+Lists are of variable length in Polaris and are defined using []. Lists can have multiple types within them including other lists to create multidimensional lists. For more information of Lists visit the [List documentation](https://github.com/WithoutTheDot/Polaris/edit/main/Documentation/Strings.md)
+```
+VAR list = ["This", "is", "a", "list", 1,2,3, [4,5]]
+```
