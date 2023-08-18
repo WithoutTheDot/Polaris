@@ -33,10 +33,10 @@ Key features of Polaris
 Clone the git
 
 #### Step 2 
-Move the [myl](https://github.com/WithoutTheDot/Polaris/tree/main/myl) folder to the following directory (ensure that it is on the correct user's folder) `~/.vscode/extensions`. Once you have reloaded Visual Studio Code, syntax highlighting will be enabled for `.myl` files
+Move the [pol](https://github.com/WithoutTheDot/Polaris/tree/main/pol) folder to the following directory (ensure that it is on the correct user's folder) `~/.vscode/extensions`. Once you have reloaded Visual Studio Code, syntax highlighting will be enabled for `.pol` files
 
 #### Step 3
-To enable access to run `.myl` files anywhere on your computer on windows in powershell (run as administrator) execute the following commands (__ensuring that you have edited the path__)
+To enable access to run `.pol` files anywhere on your computer on windows in powershell (run as administrator) execute the following commands (__ensuring that you have edited the path__)
 
 ```powershell
 $shellDirectory = "C:\Users\PATH\TO\Polaris\dist"
@@ -63,9 +63,9 @@ shell.exe
 ### Reading from Files
 Files can be directly read from command line inputs, the output will be directly shown in the terminal window you executed the command. To run a file see below:
 ```
-shell.exe my_file.myl
+shell.exe my_file.pol
 ```
-This would execute the my_file.myl program
+This would execute the my_file.pol program
 
 
 ## Contributing
