@@ -1,4 +1,4 @@
-# My Programming Language
+# Polaris
 
 
 
@@ -12,11 +12,11 @@
 
 ## Introduction
 
-Hello and welcome to my programming language. This project represents a simple exploration of how programming languages are made. While not highly advanced, this language covers the fundamentals and includes a basic (albeit imperfect) error-handling system. To install, please refer to the [Installation Instructions](#installation) section below. I hope you enjoy my language.
+Hello and welcome to my programming language. This project represents a simple exploration of how programming languages are made. While not highly advanced, this language covers the fundamentals and includes a basic (albeit imperfect) error-handling system. To install, please refer to the [Installation Instructions](#installation) section below. I hope you enjoy Polaris.
 
 ## Features
 
-Key features of my language
+Key features of Polaris
 
 - Basic Arithmetic including logical operations
 - A variety of data structures
@@ -33,13 +33,13 @@ Key features of my language
 Clone the git
 
 #### Step 2 
-Move the [myl](https://github.com/WithoutTheDot/MyLanguage/tree/main/myl) folder to the following directory (ensure that it is on the correct user's folder) `~/.vscode/extensions`. Once you have reloaded Visual Studio Code, syntax highlighting will be enabled for `.myl` files
+Move the [pol](https://github.com/WithoutTheDot/Polaris/tree/main/pol) folder to the following directory (ensure that it is on the correct user's folder) `~/.vscode/extensions`. Once you have reloaded Visual Studio Code, syntax highlighting will be enabled for `.pol` files
 
 #### Step 3
-To enable access to run `.myl` files anywhere on your computer on windows in powershell (run as administrator) execute the following commands (__ensuring that you have edited the path__)
+To enable access to run `.pol` files anywhere on your computer on windows in powershell (run as administrator) execute the following commands (__ensuring that you have edited the path__)
 
 ```powershell
-$shellDirectory = "C:\Users\PATH\TO\MyLanguage\dist"
+$shellDirectory = "C:\Users\PATH\TO\Polaris\dist"
 [Environment]::SetEnvironmentVariable("Path", "$env:Path;$shellDirectory", [EnvironmentVariableTarget]::Machine)
 ```
 This will allow you to directly run programms which are not in the path of `shell.py`.
@@ -55,7 +55,7 @@ After completing the instructions from the installation section you can use the 
 ### Via the Shell
 The shell provides a simple way to execute code directly and is useful for debugging. It is important to note that multiline statements can be inputed into the shell by using ; to seperate lines. 
 
-To start the shell either run [shell.py](https://github.com/WithoutTheDot/MyLanguage/tree/main/MyLanguage) from the [Mylanguage folder](https://github.com/WithoutTheDot/MyLanguage/tree/main/MyLanguage) or in powershell
+To start the shell either run [shell.py](https://github.com/WithoutTheDot/Polaris/tree/main/Polaris) from the [Polaris folder](https://github.com/WithoutTheDot/Polaris/tree/main/Polaris) or in powershell
 ```
 shell.exe
 ```
@@ -63,9 +63,9 @@ shell.exe
 ### Reading from Files
 Files can be directly read from command line inputs, the output will be directly shown in the terminal window you executed the command. To run a file see below:
 ```
-shell.exe my_file.myl
+shell.exe my_file.pol
 ```
-This would execute the my_file.myl program
+This would execute the my_file.pol program
 
 
 ## Contributing
