@@ -4,27 +4,27 @@
 Arithmetic can be directly entered into the shell and the output will be returned. Integers and floats can be mixed and can be positive or negative
 
 #### Addition
-```Mylanguage
+```Polaris
 basic > 1 + 2
 3
 ```
 #### Subtraction
-```Mylanguage
+```Polaris
 basic > 5 - 10.5
 -5.5
 ```
 #### Multiplication
-```Mylanguage
+```Polaris
 basic > 5 * 10
 50
 ```
 #### Division
-```Mylanguage
+```Polaris
 basic > 5/4
 1.25
 ```
 #### Raising to a power
-```Mylanguage
+```Polaris
 basic > 16^(1/2)
 ```
 ## Brackets
