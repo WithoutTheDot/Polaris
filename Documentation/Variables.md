@@ -41,6 +41,8 @@ The example below shows how to assign a variable a number.
 VAR c = 100
 ```
 
+Certain built-in constants are in Polaris including TRUE, FALSE and NULL but these have number outputs and are best for readability
+
 ## Strings
 In Polaris strings are identified with `""` and are assigned in the same way. To learn more about strings visit the [String documentation](https://github.com/WithoutTheDot/Polaris/edit/main/Documentation/Strings.md)
 ```
