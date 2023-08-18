@@ -19,7 +19,7 @@ if len(sys.argv)>1:
 
 while True:
 	fn = '<stdin>'
-	text = input('basic > ')
+	text = input('polaris > ')
 	if text.strip() == "QUIT": break
 	if text.strip().startswith("#"):continue
 	if text.strip().startswith("RUN"):
