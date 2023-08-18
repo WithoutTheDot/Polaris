@@ -1,6 +1,6 @@
-# myl README
+# pol README
 
-This is the README for your extension "myl". After writing up a brief description, we recommend including the following sections.
+This is the README for your extension "pol". After writing up a brief description, we recommend including the following sections.
 
 ## Features
 
