@@ -1,5 +1,5 @@
 {
-  "name": "myl",
+  "name": "pol",
   "displayName": "My Language Support",
   "description": "Support for my language",
   "version": "0.0.1",
@@ -11,15 +11,15 @@
   ],
   "contributes": {
     "languages": [{
-      "id": "myl",
-      "aliases": ["myl", "myl"],
-      "extensions": [".myl"],
+      "id": "pol",
+      "aliases": ["pol", "pol"],
+      "extensions": [".pol"],
       "configuration": "./language-configuration.json"
     }],
     "grammars": [{
-      "language": "myl",
-      "scopeName": "source.myl",
-      "path": "./syntaxes/myl.tmLanguage.json"
+      "language": "pol",
+      "scopeName": "source.pol",
+      "path": "./syntaxes/pol.tmLanguage.json"
     }]
   }
 }

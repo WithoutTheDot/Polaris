@@ -1,6 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-    "name": "myl",
+    "name": "pol",
     "patterns": [
         {
             "include": "#keywords"
@@ -25,7 +25,7 @@
         "keywords": {
             "patterns": [
                 {
-                    "name": "keyword.control.myl",
+                    "name": "keyword.control.pol",
                     "match": "\\b(VAR|AND|OR|NOT|IF|ELIF|ELSE|FOR|TO|STEP|WHILE|DO|FUNC|THEN|END|RETURN|CONTINUE|BREAK)\\b"
                 }
             ]
@@ -33,7 +33,7 @@
         "constants": {
             "patterns": [
                 {
-                    "name": "constant.language.myl",
+                    "name": "constant.language.pol",
                     "match": "\\b(NULL|FALSE|TRUE|MATH_PI)\\b"
                 }
             ]
@@ -41,7 +41,7 @@
         "functions": {
             "patterns": [
                 {
-                    "name": "support.function.builtin.myl",
+                    "name": "support.function.builtin.pol",
                     "match": "\\b(PRINT|PRINT_RET|INPUT|INPUT_INT|INPUT_FLOAT|CLEAR|CLS|IS_NUM|IS_STR|IS_LIST|IS_FUN|APPEND|POP|EXTEND|LEN|RUN|STR|INT|FLOAT|EDIT|RANDINT|DEBUG|TIME)\\b"
                 }
             ]
@@ -49,18 +49,18 @@
         "user_functions": {
             "patterns": [
                 {
-                    "name": "entity.name.function.user.myl",
+                    "name": "entity.name.function.user.pol",
                     "match": "\\bFUNC\\s+\\w+\\s*\\("
                 }
             ]
         },
         "strings": {
-            "name": "string.quoted.double.myl",
+            "name": "string.quoted.double.pol",
             "begin": "\"",
             "end": "\"",
             "patterns": [
                 {
-                    "name": "constant.character.escape.myl",
+                    "name": "constant.character.escape.pol",
                     "match": "\\\\."
                 }
             ]
@@ -68,11 +68,11 @@
         "comments": {
             "patterns": [
                 {
-                    "name": "comment.line.double-slash.myl",
+                    "name": "comment.line.double-slash.pol",
                     "match": "//.*$"
                 }
             ]
         }
     },
-    "scopeName": "source.myl"
+    "scopeName": "source.pol"
 }

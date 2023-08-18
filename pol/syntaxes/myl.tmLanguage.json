@@ -1,6 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-    "name": "myl",
+    "name": "pol",
     "patterns": [
         {
             "include": "#comments"
@@ -31,7 +31,7 @@
         "comments": {
             "patterns": [
                 {
-                    "name": "comment.line.number-sign.myl",
+                    "name": "comment.line.number-sign.pol",
                     "match": "#.*$"
                 }
             ]
@@ -39,7 +39,7 @@
         "keywords": {
             "patterns": [
                 {
-                    "name": "keyword.control.myl",
+                    "name": "keyword.control.pol",
                     "match": "\\b(VAR|AND|OR|NOT|IF|ELIF|ELSE|FOR|TO|STEP|WHILE|DO|FUNC|THEN|END|RETURN|CONTINUE|BREAK)\\b"
                 }
             ]
@@ -47,7 +47,7 @@
         "functions_and_calls": {
             "patterns": [
                 {
-                    "name": "support.function.myl",
+                    "name": "support.function.pol",
                     "begin": "\\b\\w+\\s*\\(",
                     "end": "\\)",
                     "patterns": [
@@ -70,7 +70,7 @@
         "constants": {
             "patterns": [
                 {
-                    "name": "constant.language.boolean.myl",
+                    "name": "constant.language.boolean.pol",
                     "match": "\\b(TRUE|FALSE)\\b"
                 }
             ]
@@ -78,18 +78,18 @@
         "numbers": {
             "patterns": [
                 {
-                    "name": "constant.numeric.myl",
+                    "name": "constant.numeric.pol",
                     "match": "\\b\\d+\\b"
                 }
             ]
         },
         "strings": {
-            "name": "string.quoted.double.myl",
+            "name": "string.quoted.double.pol",
             "begin": "\"",
             "end": "\"",
             "patterns": [
                 {
-                    "name": "constant.character.escape.myl",
+                    "name": "constant.character.escape.pol",
                     "match": "\\\\."
                 }
             ]
@@ -97,7 +97,7 @@
         "variables": {
             "patterns": [
                 {
-                    "name": "variable.name.myl",
+                    "name": "variable.name.pol",
                     "match": "\\b\\w+\\b"
                 }
             ]
@@ -105,19 +105,19 @@
         "brackets": {
             "patterns": [
                 {
-                    "name": "meta.bracket.square.myl",
+                    "name": "meta.bracket.square.pol",
                     "match": "[\\[\\]]"
                 },
                 {
-                    "name": "meta.bracket.curly.myl",
+                    "name": "meta.bracket.curly.pol",
                     "match": "[{}]"
                 },
                 {
-                    "name": "meta.bracket.round.myl",
+                    "name": "meta.bracket.round.pol",
                     "match": "[()]"
                 }
             ]
         }
     },
-    "scopeName": "source.myl"
+    "scopeName": "source.pol"
 }
