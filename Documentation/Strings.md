@@ -8,8 +8,8 @@ As in most languages strings are declared with `""` but it is important to note 
 
 Escape Characters allow a character (previously reserved) to escape and is escaped by the `\` character. There are also two preset escape characters. Shown below
 
-- '"\n"' new line
-- '"\t"' tab 
+- `"\n"` new line
+- `"\t"` tab 
 
 
 
