@@ -19,5 +19,8 @@
 | STR() | 1, to convert: number | paramater converted to string | converting numbers to string|
 | INT() | 1, to convert: valid string, float | paramater converted to int | converting numbers to int|
 | FLOAT() | 1, to convert: number, valid string | paramater converted to float | converting to float |
-
+| RANDINT() | 2, range: int | random int within the range | generating random numbers |
+| DEBUG() | 0 | 0 | Entering debug mode: DANGEROUS |
+| TIME() | 0 | Current time | Benchmarking |
+| QUIT() | 0 | 0 | Quiting | 
 --------------------------------------------------------------------------------------
