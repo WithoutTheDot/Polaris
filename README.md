@@ -1,5 +1,3 @@
-# Polaris
-
 ![Logo](/img/banner.png)
 
 
