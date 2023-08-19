@@ -1,6 +1,6 @@
 # Polaris
 
-![Logo](/img/logo.png)
+![Logo](/img/banner.png)
 
 
 ## Table of Contents
