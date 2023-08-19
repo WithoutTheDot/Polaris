@@ -25,4 +25,4 @@ Functions can be called using brackets and inside the brackets any paramaters ar
 ```
 another_test(7,2)
 ```
-Paramaters can also be other functions (called or uncalled) or variables. Functions can also be anonymous if defined without a name and are <anonymous> 
+Paramaters can also be other functions (called or uncalled) or variables. Functions can also be anonymous if defined without a name and are labelled `<anonymous>` 
