@@ -10,4 +10,8 @@
 | INPUT_INT() | 0 | Input as int| Get integer inputs eg age |
 | INPUT_FLOAT() | 0 | Input as float | Get float input eg height |
 | CLEAR()/CLS() | 0 | 0 | Clears the screen |
+| IS_NUM() | 1, what to check: any type | boolean value of if paramater is num | Test if something is a number|
+| IS_STR() | 1, what to check: any type | boolean value of if paramater is str | Test if something is a string|
+| IS_LIST() | 1, what to check: any type | boolean value of if paramater is list | Test if something is a list|
+| IS_FUN() | 1, what to check: any type | boolean value of if paramater is func | Test if something is a function|
 --------------------------------------------------------------------------------------
