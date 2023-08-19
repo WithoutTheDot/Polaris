@@ -23,4 +23,11 @@
 | DEBUG() | 0 | 0 | Entering debug mode: DANGEROUS |
 | TIME() | 0 | Current time | Benchmarking |
 | QUIT() | 0 | 0 | Quiting | 
+| APPEND() | 2, list: list, item: any | 0 | Used to appened an item to a list |
+| POP() | 2, list:,  list, index: int | The popped element | used to remove an element from a list |
+| EXTEND() | 2, list to extend: list, other: list | 0 | Used to extend a list |
+| EDIT() | 3, list:list, index: integer, value: any | 0 | Used to edit an element at a certain index |
+| INSERT() | 3, list:list, index: integer, value: any | 0 | Used to insert an item at a certain index |
+| REPLACE() | 3, string:string, from:string, to:string | New string | Used to replace a substring with another substring |
+| SPLIT() | 2, string:string, delimiter:string | list of split string | used to split a string by a substring |
 --------------------------------------------------------------------------------------
