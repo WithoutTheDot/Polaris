@@ -67,5 +67,3 @@ The following built in functions are specific to strings
 | REPLACE() | string: string, from: string, to:string | New replaced string | Replacing substring with another string |
 | SPLIT() | string:string, delimiter: string | Arr of split string | Used to split a string by a substring |
 -----------------------------------------
-
-built in functions
