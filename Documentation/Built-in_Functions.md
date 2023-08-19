@@ -6,5 +6,5 @@
 |-------------------|------------------------------|-----------------|--------------------|
 | PRINT()           | 1, what to output: any type  |     0           |  Output To Display |
 | PRINT_RET()       | 1, to return: any type       | Input as String |  Used to output to
-                                                                        terminal
+|                                                                       terminal
 --------------------------------------------------------------------------------------
