@@ -1,19 +1,23 @@
-#Basic Arithmetic and Operators
+# Basic Arithmetic and Operators
 
-## Arithmetic 
+## Arithmetic
+
 Arithmetic can be directly entered into the shell and the output will be returned. Integers and floats can be mixed and can be positive or negative
 
 #### Addition
-```Polaris
+
+```
 basic > 1 + 2
 3
 ```
 #### Subtraction
-```Polaris
+
+```
 basic > 5 - 10.5
 -5.5
 ```
 #### Multiplication
+
 ```Polaris
 basic > 5 * 10
 50
@@ -54,13 +58,17 @@ basic > NOT 0
 ```
 
 ## Comparison Operators
+
 All comparison operators work between integers and floats but `==` and `!=` work between strings and strings and lists and lists
+
 #### Is equal to
+
 ```
 basic > 1==200
 0
 ```
 #### Is not equal to
+
 ```
 basic > 1!=200
 1
