@@ -16,4 +16,8 @@
 | IS_FUN() | 1, what to check: any type | boolean value of if paramater is func | Test if something is a function|
 | LEN() | 1, what to check: list or string | integer value of the length |
 | RUN() | 1, filename to run: string | 0 | Run files |
+| STR() | 1, to convert: number | paramater converted to string | converting numbers to string|
+| INT() | 1, to convert: valid string, float | paramater converted to int | converting numbers to int|
+| FLOAT() | 1, to convert: number, valid string | paramater converted to float | converting to float |
+
 --------------------------------------------------------------------------------------
