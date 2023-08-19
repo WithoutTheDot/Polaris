@@ -7,7 +7,7 @@ Functions in Polaris are used to wrap up blocks of code to be reused and provide
 ```
 FUNC test(a, b) -> PRINT(a*b)
 ```
-In this case the function test is created with 2 paramaters (a and b) and will print a*b
+In this case the function test is created with 2 parameters (a and b) and will print a*b
 ### Multiline Functions
 ```
 FUNC another_test(a,b)
@@ -21,8 +21,8 @@ This function spans across many lines and is marked by the `END` keyword
 
 ## Calling Functions
 
-Functions can be called using brackets and inside the brackets any paramaters are passed into the functions.
+Functions can be called using brackets and inside the brackets any parameters are passed into the functions.
 ```
 another_test(7,2)
 ```
-Paramaters can also be other functions (called or uncalled) or variables. Functions can also be anonymous if defined without a name and are labelled `<anonymous>` 
+Parameters can also be other functions (called or uncalled) or variables. Functions can also be anonymous if defined without a name and are labelled `<anonymous>` 
