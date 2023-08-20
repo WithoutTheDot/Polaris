@@ -1,0 +1,9 @@
+WHILE TRUE DO
+    PRINT("Press enter to roll the die")
+    INPUT()
+    PRINT("You rolled a "+ STR(RANDINT(1,6)))
+    PRINT("Play again? (y/n)")
+    IF INPUT() != "y" THEN
+        BREAK
+    END
+END

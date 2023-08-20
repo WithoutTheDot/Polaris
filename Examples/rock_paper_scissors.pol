@@ -1,0 +1,16 @@
+VAR choices = ["rock", "paper", "scissors"]
+
+WHILE TRUE DO
+    PRINT("Rock/Paper/Scissors: ")
+    VAR player_choice = INPUT()
+    VAR computer_choice = choices/RANDINT(0,LEN(choices)-1)
+    PRINT("Computer chose "+ STR(computer_choice))
+
+    IF player_choice == computer_choice THEN
+        PRINT("Tie! ")
+    ELIF player_choice == "rock" AND computer_choice == "scissors" OR player_choice == "paper" AND computer_choice == "rock" OR player_choice == "rock" AND computer_choice == "scissors" THEN # Unnecessary long elif statement
+        PRINT("You win")
+    ELSE
+        PRINT("You lose")
+    END
+END
