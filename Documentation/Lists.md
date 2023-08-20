@@ -64,5 +64,5 @@ The following functions are specific to lists
 | EXTEND() | 2, list to extend: list, other: list | 0 | Used to extend a list |
 | EDIT() | 3, list:list, index: integer, value: any | 0 | Used to edit an element at a certain index |
 | INSERT() | 3, list:list, index: integer, value: any | 0 | Used to insert an item at a certain index |
-------------------------------------------------------------
+
 
