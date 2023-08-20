@@ -14,4 +14,4 @@ END
 VAR s = TIME()
 wait(1)
 VAR e = TIME()
-PRINT(e-s-1)
+PRINT(e-s-1) # shows margin of error +/-
