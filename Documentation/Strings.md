@@ -27,19 +27,19 @@ Would result in
 ### Mathmatical
 The following symbols can be applied to a string `+`,`*`,`/`.
 
-#### +
+#### `+`
 This concatonates two strings to create a larger one. Note no space is added.
 ```
 "Hello" + " World"
 "Hello World"
 ```
-#### *
+#### `*`
 This multiplies a string and repeats it an integer number.
 ```
 "Hello " * 3
 "Hello Hello Hello"
 ```
-#### / 
+#### `/` 
 This gets the character at the index (integer).
 ```
 "Hello World"/3
