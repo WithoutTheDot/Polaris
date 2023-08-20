@@ -27,19 +27,19 @@ Would result in
 ### Mathmatical
 The following symbols can be applied to a string `+`,`*`,`/`.
 
-#### +
+#### `+` Concatonation
 This concatonates two strings to create a larger one. Note no space is added.
 ```
 "Hello" + " World"
 "Hello World"
 ```
-#### *
+#### `*` Multiplication
 This multiplies a string and repeats it an integer number.
 ```
 "Hello " * 3
 "Hello Hello Hello"
 ```
-#### / 
+#### `/` Indexing
 This gets the character at the index (integer).
 ```
 "Hello World"/3
@@ -47,13 +47,13 @@ This gets the character at the index (integer).
 ```
 ### Comparisons
 Two comprisons can be applied between two strings `==` and `!=`
-#### ==
+#### `==` Equal to
 Checks if the value of both strings are the same
 ```
 "Hello" == "Hello"
 1
 ```
-#### != 
+#### `!=` Not equal to
 Checks if the value of both strings are not equal
 ```
 "Hello" != "World"
@@ -64,6 +64,7 @@ The following built in functions are specific to strings
 
 | Function | Parameters | Return | Use |
 |----------|------------|--------|-----|
+| LEN() | 1, string or list | lenght integer value | get the length of something |
 | REPLACE() | string: string, from: string, to:string | New replaced string | Replacing substring with another string |
 | SPLIT() | string:string, delimiter: string | Arr of split string | Used to split a string by a substring |
 -----------------------------------------
