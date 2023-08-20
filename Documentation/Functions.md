@@ -26,3 +26,15 @@ Functions can be called using brackets and inside the brackets any parameters ar
 another_test(7,2)
 ```
 Parameters can also be other functions (called or uncalled) or variables. Functions can also be anonymous if defined without a name and are labelled `<anonymous>` 
+
+## RETURN
+`RETURN` is used to pass back a return value from a function. See the example below
+```
+FUNC add(a,b)
+  RETURN a+b
+END
+
+VAR a = add(2,3)
+PRINT(a)
+```
+The output would be `5`
