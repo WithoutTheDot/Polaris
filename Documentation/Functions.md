@@ -7,7 +7,7 @@ Functions in Polaris are used to wrap up blocks of code to be reused and provide
 ```
 FUNC test(a, b) -> PRINT(a*b)
 ```
-In this case the function test is created with 2 parameters (a and b) and will print a*b
+In this case the function test is created with 2 parameters (a and b) and will print a*b. Note the `->` is required
 ### Multiline Functions
 ```
 FUNC another_test(a,b)
