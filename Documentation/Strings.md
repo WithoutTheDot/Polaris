@@ -47,13 +47,13 @@ This gets the character at the index (integer).
 ```
 ### Comparisons
 Two comprisons can be applied between two strings `==` and `!=`
-#### == Equal to
+#### `==` Equal to
 Checks if the value of both strings are the same
 ```
 "Hello" == "Hello"
 1
 ```
-#### != Not equal to
+#### `!=` Not equal to
 Checks if the value of both strings are not equal
 ```
 "Hello" != "World"
