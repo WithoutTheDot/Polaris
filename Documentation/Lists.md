@@ -57,7 +57,7 @@ This is the opposite of equal to and will return true if the lists re not the sa
 The following functions are specific to lists
 
 | Function | Paramaters | Return | Use |
----
+
 | LEN() | 1, string or list | lenght integer value | get the length of something |
 | APPEND() | 2, list: list, item: any | 0 | Used to appened an item to a list |
 | POP() | 2, list:,  list, index: int | The popped element | used to remove an element from a list |
