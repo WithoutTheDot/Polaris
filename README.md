@@ -73,7 +73,7 @@ Contributing is encouraged, if you have an idea please feel free to fork this re
 **A new bugs.txt file has been created in the misc folder please submit any bugs there***
 
 
-## Breif Showcase
+## Brief Showcase
 These are some of the examples with correct highlighting from VSCODE 
 
 ### Two Sum
