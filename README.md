@@ -77,4 +77,10 @@ Contributing is encouraged, if you have an idea please feel free to fork this re
 These are some of the examples with correct highlighting from VSCODE 
 
 ### Two Sum
-![Two Sum]()
+![Two Sum](https://github.com/WithoutTheDot/Polaris/blob/main/img/two_sum.png)
+
+### Palindrome
+![Palindrome](https://github.com/WithoutTheDot/Polaris/blob/main/img/palindrome.png)
+
+### Fibonacci
+![Fibonacci](https://github.com/WithoutTheDot/Polaris/blob/main/img/Fibonacci.png)
