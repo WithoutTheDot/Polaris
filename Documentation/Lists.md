@@ -30,4 +30,31 @@ PRINT(a-1)
 # Output: [1,3]
 ```
 
+#### `/` Index
+`/` Is used to get an element at a certain index in a list
+```
+VAR a = [1,2,3]
+PRINT(a/2)
+# Output: 3
+```
+
+### Comparisons
+Only two comparisons can be used on lists, `==` and `!=`.
+#### `==` Equal to
+This is used to directly compare the list and will only return true if all elements at all indexes are the same
+```
+[1,2] == [2,1]
+0
+```
+#### `!=` Not equal to
+This is the opposite of equal to and will return true if the lists re not the same
+```
+[1,2] == [2,1]
+1
+```
+
+## Built-in Functions
+The following functions are specific to lists
+
+
 operations,comparisons, built in functions
