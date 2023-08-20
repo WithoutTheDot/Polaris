@@ -64,6 +64,7 @@ The following built in functions are specific to strings
 
 | Function | Parameters | Return | Use |
 |----------|------------|--------|-----|
+| LEN() | 1, string or list | lenght integer value | get the length of something |
 | REPLACE() | string: string, from: string, to:string | New replaced string | Replacing substring with another string |
 | SPLIT() | string:string, delimiter: string | Arr of split string | Used to split a string by a substring |
 -----------------------------------------
