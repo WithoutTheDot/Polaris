@@ -72,3 +72,9 @@ This would execute the my_file.pol program
 Contributing is encouraged, if you have an idea please feel free to fork this repository and I test out your improvements and add them.
 **A new bugs.txt file has been created in the misc folder please submit any bugs there***
 
+
+## Breif Showcase
+These are some of the examples with correct highlighting from VSCODE 
+
+### Two Sum
+![Two Sum]()
