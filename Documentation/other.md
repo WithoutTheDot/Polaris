@@ -31,7 +31,20 @@ WHILE TRUE DO
 END
 ```
 
-Semi colon,
-END,
-RUN and functions,
-Comments
+## RUN
+`RUN()` takes in one paramater as a filename in the current directory and runs the code. However this can be used to import functions and variables from other scripts as once you run it all variables and functions are now in the current enviroment so can be used, reassigned etc. This will improve readability in code. See example below
+```
+FUNC what_is_the_time()
+  PRINT("Time to get a watch!")
+END 
+```
+This is in `time.pol` file
+```
+RUN("time.pol")
+what_is_the_time()
+```
+This is in a seperate file.
+
+This code is valid and will work
+
+
