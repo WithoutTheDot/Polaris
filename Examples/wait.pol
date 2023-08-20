@@ -1,0 +1,17 @@
+
+
+FUNC ROUND(number, decimal)
+    RETURN (INT(10^decimal * number - 0.5) + 1) / 10 ^ decimal
+END
+
+FUNC wait(seconds)
+    VAR start_time = ROUND(TIME(), 3)
+    WHILE ROUND(TIME(), 3) != (start_time + seconds) DO
+        CONTINUE
+    END
+    RETURN 0
+END
+VAR s = TIME()
+wait(1)
+VAR e = TIME()
+PRINT(e-s-1)
