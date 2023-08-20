@@ -8,6 +8,7 @@
 - [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Contributing](#contributing)
+- [Showcase](#brief-showcase)
 
 ## Introduction
 
