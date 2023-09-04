@@ -4,6 +4,6 @@ RUN("wait.pol") # Will also print out the results so use carefully
 FUNC main()
     PRINT("Running")
     wait(1)
-    PRINT("Waiting")
+    PRINT("Complete")
 END
 main()
