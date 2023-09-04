@@ -1,0 +1,9 @@
+RUN("wait.pol") # Will also print out the results so use carefully
+# Example of importing from other scripts
+
+FUNC main()
+    PRINT("Running")
+    wait(1)
+    PRINT("Waiting")
+END
+main()
