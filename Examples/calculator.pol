@@ -1,0 +1,30 @@
+# Simple calculator to perform addition, subtraction, multiplication, and division
+FUNC calculator(a, b, operation)
+    IF operation == "+" THEN
+        RETURN a + b
+    ELIF operation == "-" THEN
+        RETURN a - b
+    ELIF operation == "*" THEN
+        RETURN a * b
+    ELIF operation == "/" THEN
+        RETURN a / b
+    ELIF operation == "^" THEN
+        RETURN a ^ b
+    ELSE
+        PRINT("Invalid operation")
+        RETURN "NULL"
+    END
+END
+
+WHILE TRUE DO
+    PRINT("Enter in a calculation (+,-,/,^ are accepted)")
+    VAR command = INPUT()
+    IF command == "q" THEN
+        BREAK
+    END
+    VAR command = SPLIT(command, " ")
+    VAR result = calculator(FLOAT(command/0), FLOAT(command/2), command/1)
+    PRINT(result)
+END
+    
+
